@@ -38,3 +38,6 @@ export default async function Page() {
     </main>
   );
 }
+
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';

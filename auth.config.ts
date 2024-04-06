@@ -12,11 +12,7 @@ export const authConfig = {
         if (isLoggedIn) return true;
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
-        const redirectUrl = process.env.DEPLOY === 'production'
-        ? process.env.NEXT_PUBLIC_URL // Production URL
-        : nextUrl; // Development URL
-
-        return Response.redirect(new URL('/dashboard', redirectUrl));
+        return Response.redirect(new URL('/dashboard', nextUrl));
       }
       return true;
     },
